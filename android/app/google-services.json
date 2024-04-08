@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29982109672",
+    "project_id": "alsanafer-6cab7",
+    "storage_bucket": "alsanafer-6cab7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29982109672:android:bc88f57465d03a40bc3e5d",
+        "android_client_info": {
+          "package_name": "com.smartsolns.sanafer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYP6_q3HjQTraUhspEOkQq9ozfVjZProc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
