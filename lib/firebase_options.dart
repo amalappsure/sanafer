@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,38 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCuaCsXM1RAk521RQZpN3nlZtwoO0Qxjk8',
-    appId: '1:29982109672:web:fa61bf2d776d6e7fbc3e5d',
-    messagingSenderId: '29982109672',
-    projectId: 'alsanafer-6cab7',
-    authDomain: 'alsanafer-6cab7.firebaseapp.com',
-    storageBucket: 'alsanafer-6cab7.appspot.com',
-    measurementId: 'G-1JH3RGKEYC',
+    apiKey: 'AIzaSyAltRbUwBvlCOp5U-TFRFXGpEJut6txHzQ',
+    appId: '1:821491385956:web:397b35c255707573748171',
+    messagingSenderId: '821491385956',
+    projectId: 'alsanafer-15719',
+    authDomain: 'alsanafer-15719.firebaseapp.com',
+    storageBucket: 'alsanafer-15719.appspot.com',
+    measurementId: 'G-3V88TDL215',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBYP6_q3HjQTraUhspEOkQq9ozfVjZProc',
-    appId: '1:29982109672:android:bc88f57465d03a40bc3e5d',
-    messagingSenderId: '29982109672',
-    projectId: 'alsanafer-6cab7',
-    storageBucket: 'alsanafer-6cab7.appspot.com',
+    apiKey: 'AIzaSyB91EZNGtu0Wc6EO6oLXwIxM5gs2_pQPmQ',
+    appId: '1:821491385956:android:719662a4241573e0748171',
+    messagingSenderId: '821491385956',
+    projectId: 'alsanafer-15719',
+    storageBucket: 'alsanafer-15719.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCc7-ORENvIZrBG37LaMxbAbJfr-TkIxh8',
-    appId: '1:29982109672:ios:760737afbb6d6f00bc3e5d',
-    messagingSenderId: '29982109672',
-    projectId: 'alsanafer-6cab7',
-    storageBucket: 'alsanafer-6cab7.appspot.com',
+    apiKey: 'AIzaSyAnLd7oLuj4WAKWYhh9ltMf30d7Mv1GFYM',
+    appId: '1:821491385956:ios:16b213f09f7c2945748171',
+    messagingSenderId: '821491385956',
+    projectId: 'alsanafer-15719',
+    storageBucket: 'alsanafer-15719.appspot.com',
     iosBundleId: 'com.example.demoApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCc7-ORENvIZrBG37LaMxbAbJfr-TkIxh8',
-    appId: '1:29982109672:ios:cc3527a59ac11a80bc3e5d',
-    messagingSenderId: '29982109672',
-    projectId: 'alsanafer-6cab7',
-    storageBucket: 'alsanafer-6cab7.appspot.com',
-    iosBundleId: 'com.example.demoApp.RunnerTests',
+    apiKey: 'AIzaSyAnLd7oLuj4WAKWYhh9ltMf30d7Mv1GFYM',
+    appId: '1:821491385956:ios:16b213f09f7c2945748171',
+    messagingSenderId: '821491385956',
+    projectId: 'alsanafer-15719',
+    storageBucket: 'alsanafer-15719.appspot.com',
+    iosBundleId: 'com.example.demoApp',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyAltRbUwBvlCOp5U-TFRFXGpEJut6txHzQ',
+    appId: '1:821491385956:web:52afbc6bebf252fd748171',
+    messagingSenderId: '821491385956',
+    projectId: 'alsanafer-15719',
+    authDomain: 'alsanafer-15719.firebaseapp.com',
+    storageBucket: 'alsanafer-15719.appspot.com',
+    measurementId: 'G-JJVENY3JNB',
+  );
+
 }

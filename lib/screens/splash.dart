@@ -18,10 +18,10 @@ class SplashScreen extends StatelessWidget {
           children: [
             const Spacer(),
             Responsive(
-              mobile: (context, constraints, child) => Assets.images.demologo.image(
+              mobile: (context, constraints, child) => Assets.images.smartsolns.image(
                 width: MediaQuery.of(context).size.width * 0.45,
               ),
-              desktop: (context, constraints, child) => Assets.images.demologo.image(
+              desktop: (context, constraints, child) => Assets.images.smartsolns.image(
                 height: MediaQuery.of(context).size.height * 0.45,
               ),
             ),

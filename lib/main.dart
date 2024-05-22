@@ -61,7 +61,6 @@ class _MyAppState extends ConsumerState<MyApp> {
     if (provider.selectedLocale == null) {
       return const SplashScreen();
     }
-
     return Builder(
       builder: (context) {
         ScreenUtil.init(
@@ -78,7 +77,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           ],
           supportedLocales: provider.locales.map((e) => e.locale).toList(),
           locale: provider.selectedLocale!.locale,
-          title: 'Alaysh',
+          title: 'AlSanafer',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
               seedColor: smartSuiteBlue,
