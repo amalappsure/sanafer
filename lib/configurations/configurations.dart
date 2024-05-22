@@ -19,6 +19,7 @@ class AlayshDemo implements Config {
   // String get baseUrl => "https://demo.smartsolns.net/alaysh/ecommerceapi/api";
   @override
   String get baseUrl => "https://demo.smartsolns.net/sanaferv5/ecommerceapi/api";
+  // String get baseUrl => "https://demo.smartsolns.org/sanaferv5/ecommerceapi/api";
 
   // @override
   // String get whatsappMessageUrl => "https://demo.smartsolns.net/alaysh/ecommerce";

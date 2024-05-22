@@ -65,6 +65,19 @@ class _AccountTabState extends ConsumerState<AccountTab> {
 
     final common = [
       AccountTabButton(
+          onPressed: () => settings.selectedLocale = settings.unselectedLocale,
+          text: settings.selectedLocale!.translate(
+            'Language',
+          ),
+          arrowWidget: Text(settings.unselectedLocale?.displayName ?? '',
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: colors.black,
+                  )),
+          textColor: Colors.black,
+          icon: Iconsax.translate,
+          iconColor: smartSuiteBlue,
+        ),
+      AccountTabButton(
         onPressed: () => context.pushRoute(
           CompanyInfoRoute(type: InfoType.about),
         ),
@@ -141,22 +154,22 @@ class _AccountTabState extends ConsumerState<AccountTab> {
         ),
     ];
 
-    final languageButton = AccountTabButton(
-      onPressed: () => settings.selectedLocale = settings.unselectedLocale,
-      text: settings.selectedLocale!.translate(
-        'Language',
-      ),
-      arrowWidget: Text(settings.unselectedLocale?.displayName ?? '',
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                color: colors.black,
-              )),
-      textColor: Colors.black,
-      icon: Iconsax.translate,
-      iconColor: smartSuiteBlue,
-    );
+    // final languageButton = AccountTabButton(
+    //   onPressed: () => settings.selectedLocale = settings.unselectedLocale,
+    //   text: settings.selectedLocale!.translate(
+    //     'Language',
+    //   ),
+    //   arrowWidget: Text(settings.unselectedLocale?.displayName ?? '',
+    //       style: Theme.of(context).textTheme.titleSmall?.copyWith(
+    //             color: colors.black,
+    //           )),
+    //   textColor: Colors.black,
+    //   icon: Iconsax.translate,
+    //   iconColor: smartSuiteBlue,
+    // );
 
     final signedOutList = [
-      languageButton,
+      // languageButton,
       AccountTabButton(
         onPressed: () {
           ref.read(loginStateProvider.notifier).state = LoginRequired(
@@ -176,9 +189,9 @@ class _AccountTabState extends ConsumerState<AccountTab> {
     final signedInList = [
       // languageButton,
       AccountTabButton(
-        // onPressed: () => context.pushRoute(
-        //   const OrdersRoute(),
-        // ),
+        onPressed: () => context.pushRoute(
+          const OrdersRoute(),
+        ),
         text: settings.selectedLocale!.translate(
           'YourOrders',
         ),
@@ -187,9 +200,9 @@ class _AccountTabState extends ConsumerState<AccountTab> {
         iconColor: smartSuiteBlue,
       ),
       AccountTabButton(
-        // onPressed: () => context.pushRoute(
-        //   const AddressesRoute(),
-        // ),
+        onPressed: () => context.pushRoute(
+          const AddressesRoute(),
+        ),
         text: settings.selectedLocale!.translate(
           'YourAddresses',
         ),
@@ -199,9 +212,9 @@ class _AccountTabState extends ConsumerState<AccountTab> {
       ),
       if (ref.read(appConfigProvider).enablewishlist)
         AccountTabButton(
-          // onPressed: () => context.pushRoute(
-          //   const WishListRoute(),
-          // ),
+          onPressed: () => context.pushRoute(
+            const WishListRoute(),
+          ),
           text: settings.selectedLocale!.translate(
             'YourWishList',
           ),
@@ -218,9 +231,9 @@ class _AccountTabState extends ConsumerState<AccountTab> {
       //   iconColor: colors.black,
       // ),
       AccountTabButton(
-        // onPressed: () => context.pushRoute(
-        //   const EditProfileRoute(),
-        // ),
+        onPressed: () => context.pushRoute(
+          const EditProfileRoute(),
+        ),
         text: settings.selectedLocale!.translate(
           'Login&Security',
         ),
@@ -248,7 +261,6 @@ class _AccountTabState extends ConsumerState<AccountTab> {
     final list = loginState is LoggedIn ? signedInList : signedOutList;
 
     const iconSize = 40.0;
-
     return Scaffold(
       appBar: AlSanaferAppBar(
         leading: Padding(
@@ -292,7 +304,7 @@ class _AccountTabState extends ConsumerState<AccountTab> {
                             );
                           }),
                         ),
-                      const Gap(8),
+                      const Gap(10),
                       Flexible(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

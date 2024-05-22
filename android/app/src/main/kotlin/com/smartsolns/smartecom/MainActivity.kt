@@ -1,4 +1,4 @@
-package com.smartsolns.sanafer
+package com.smartsolns.smartecom
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -24,16 +24,49 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/cart-empty.png
+  AssetGenImage get cartEmpty =>
+      const AssetGenImage('assets/images/cart-empty.png');
+
   /// File path: assets/images/demologo.jpg
   AssetGenImage get demologo =>
       const AssetGenImage('assets/images/demologo.jpg');
+
+  /// File path: assets/images/no_image.jpg
+  AssetGenImage get noImage =>
+      const AssetGenImage('assets/images/no_image.jpg');
+
+  /// File path: assets/images/offerbackground.jpg
+  AssetGenImage get offerbackground =>
+      const AssetGenImage('assets/images/offerbackground.jpg');
+
+  /// File path: assets/images/offeryellowbackground.jpg
+  AssetGenImage get offeryellowbackground =>
+      const AssetGenImage('assets/images/offeryellowbackground.jpg');
 
   /// File path: assets/images/sanaferlogo.png
   AssetGenImage get sanaferlogo =>
       const AssetGenImage('assets/images/sanaferlogo.png');
 
+  /// File path: assets/images/slide_show.png
+  AssetGenImage get slideShow =>
+      const AssetGenImage('assets/images/slide_show.png');
+
+  /// File path: assets/images/smartsolns.png
+  AssetGenImage get smartsolns =>
+      const AssetGenImage('assets/images/smartsolns.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [demologo, sanaferlogo];
+  List<AssetGenImage> get values => [
+        cartEmpty,
+        demologo,
+        noImage,
+        offerbackground,
+        offeryellowbackground,
+        sanaferlogo,
+        slideShow,
+        smartsolns
+      ];
 }
 
 class $AssetsSvgsGen {
@@ -55,6 +88,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/twitterx.svg
   SvgGenImage get twitterx => const SvgGenImage('assets/svgs/twitterx.svg');
 
+  /// File path: assets/svgs/whatsapp.svg
+  SvgGenImage get whatsapp => const SvgGenImage('assets/svgs/whatsapp.svg');
+
   /// File path: assets/svgs/whatsapp_icon.svg
   SvgGenImage get whatsappIcon =>
       const SvgGenImage('assets/svgs/whatsapp_icon.svg');
@@ -69,6 +105,7 @@ class $AssetsSvgsGen {
         instagram,
         linkedin,
         twitterx,
+        whatsapp,
         whatsappIcon,
         youtube
       ];
