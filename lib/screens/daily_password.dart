@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:base_ecom_appsure/features/app_settings/providers/settings_provider.dart';
 import 'package:base_ecom_appsure/features/cart/presentation/add_to_cart_button.dart';
+import 'package:base_ecom_appsure/foundation/show_snack_bar.dart';
 import 'package:base_ecom_appsure/widgets/responsive_builder.dart';
 import 'package:base_ecom_appsure/widgets/text_field_with_title.dart';
 import 'package:flutter/material.dart';
@@ -27,56 +28,59 @@ class _DailyPasswordState extends ConsumerState<DailyPasswordScreen> {
 
   TextEditingController _password = TextEditingController();
   String number  = 'Smart@1234';
+  String errorMsg  = '';
   @override
   Widget build(BuildContext context) {
     final settings = ref.watch(settingsProvider);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            const Spacer(),
-            Responsive(
-              mobile: (context, constraints, child) => Assets.images.smartsolns.image(
-                width: MediaQuery.of(context).size.width * 0.45,
-              ),
-              desktop: (context, constraints, child) => Assets.images.smartsolns.image(
-                height: MediaQuery.of(context).size.height * 0.45,
-              ),
+    errorMsg = settings.selectedLocale!.translate('InvalidPassword');
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          const Spacer(),
+          Responsive(
+            mobile: (context, constraints, child) => Assets.images.smartsolns.image(
+              width: MediaQuery.of(context).size.width * 0.45,
             ),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-              child: TextFieldWithTitleBase.widget(
-                controller: _password,
-                hint: "Enter Password",
-                onChanged: (value) {
+            desktop: (context, constraints, child) => Assets.images.smartsolns.image(
+              height: MediaQuery.of(context).size.height * 0.45,
+            ),
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+            child: TextFieldWithTitleBase.widget(
+              controller: _password,
+              hint: settings.selectedLocale!.translate('EnterPassword'),
+              onChanged: (value) {
 
-                },
-                maxLength: 10,
-                counter: const SizedBox.shrink(),
-                // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-              ),
+              },
+              maxLength: 10,
+              counter: const SizedBox.shrink(),
+              // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.next,
             ),
-            const SizedBox(height: 10,),
-            Padding(
-              padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-              child: _buyNowButton(
-                  (){
-                    if(_password.text == number){
-                      context.replaceRoute(
-                        const HomeRoute(),
-                      );
-                    }
+          ),
+          const SizedBox(height: 10,),
+          Padding(
+            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+            child: _buyNowButton(
+                    (){
+                  if(_password.text == number){
+                    context.replaceRoute(
+                      const HomeRoute(),
+                    );
+                  }else{
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(errorMsg)),
+                    );
                   }
-              ),
+                }
             ),
-            const Spacer()
-          ],
-        ),
+          ),
+          const Spacer()
+        ],
       ),
     );
   }
