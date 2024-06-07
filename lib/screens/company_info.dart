@@ -16,6 +16,7 @@ class CompanyInfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('type  = $type');
     return CompanyInfoView(
       type: type,
       appBarBuilder: (title, showActions) => AlSanaferAppBar(

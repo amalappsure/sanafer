@@ -16,7 +16,7 @@ import 'package:sanafer/routes/app_router.gr.dart';
 import 'package:sanafer/widgets/al_sanafer_app_bar.dart';
 
 @RoutePage()
-class EditProfileScreen extends ConsumerWidget {
+class  EditProfileScreen extends ConsumerWidget {
   const EditProfileScreen({super.key});
 
   @override
